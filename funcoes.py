@@ -45,9 +45,9 @@ def printamatriz(matriz):
 
 def transposta(m):
     matriztransposta = []
-    rez = [[m[j][i] for j in range(len(m))] for i in range(len(m[0]))]
-    for row in rez:
-        matriztransposta.append(row)
+    x = [[m[j][i] for j in range(len(m))] for i in range(len(m[0]))]
+    for linha in x:
+        matriztransposta.append(linha)
     return matriztransposta
 
 def inversa2x2(matriz):
