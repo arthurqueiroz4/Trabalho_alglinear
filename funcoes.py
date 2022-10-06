@@ -193,6 +193,23 @@ def inversa4x4(matriz):
     x = np.array(transposta(matrizout1)) * float(1/det4x4(matriz))
     return printamatriz(x)
 
+def verificabase(base1,base2,dimensao):
+    if dimensao == 2:
+        if det2x2(base1)==0 or det2x2(base2)==0:
+            return False
+        else:
+            return True
+    elif dimensao == 3:
+        if det3x3(base1)==0 or det3x3(base2)==0:
+            return False
+        else:
+            return True
+    elif dimensao == 4:
+        if det3x3(base1)==0 or det3x3(base2)==0:
+            return False
+        else:
+            return True
+
 def mudancadebase2x2(base1,base2):
     a = [[base2[0][0],base2[1][0]],[base2[0][1],base2[1][1]]]
     b = base1[0]

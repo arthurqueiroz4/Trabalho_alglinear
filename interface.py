@@ -1,4 +1,6 @@
-from funcoes import det2x2,det3x3,det4x4,printamatriz,inversa2x2,inversa3x3,inversa4x4,mudancadebase2x2,mudancadebase3x3,mudancadebase4x4
+from funcoes import det2x2,det3x3,det4x4,printamatriz,\
+    inversa2x2,inversa3x3,inversa4x4,mudancadebase2x2,\
+    mudancadebase3x3,mudancadebase4x4,verificabase
 import numpy as np
 
 resp = input('1. Determintante e Inversa.\n2. Matriz de mudança de base.\n=>')
@@ -89,41 +91,42 @@ if resp == '2':
                 aux.append(int(i))
         base2.append(aux[:])
         aux.clear()
-
-    if dimensao == 2:
-        print('-'*50)
-        print("A base1: ")
-        printamatriz(base1)
-        print("A base2: ")
-        printamatriz(base2)
-        print()
-        print("A matriz de mudança de base: ")
-        print()
-        mudancadebase2x2(base1,base2)
-        print()
-        print('-'*50)
-    if dimensao == 3:
-        print('-'*50)
-        print("A base1: ")
-        printamatriz(base1)
-        print("A base2: ")
-        printamatriz(base2)
-        print()
-        print("A matriz de mudança de base: ")
-        print()
-        mudancadebase3x3(base1,base2)
-        print()
-        print('-'*50)
-    if dimensao == 4:
-        print('-'*50)
-        print("A base1: ")
-        printamatriz(base1)
-        print("A base2: ")
-        printamatriz(base2)
-        print()
-        print("A matriz de mudança de base: ")
-        print()
-        mudancadebase4x4(base1,base2)
-        print()
-        print('-'*50)
-    
+    if verificabase(base1,base2,dimensao):
+        if dimensao == 2:
+            print('-'*50)
+            print("A base1: ")
+            printamatriz(base1)
+            print("A base2: ")
+            printamatriz(base2)
+            print()
+            print("A matriz de mudança de base: ")
+            print()
+            mudancadebase2x2(base1,base2)
+            print()
+            print('-'*50)
+        if dimensao == 3:
+            print('-'*50)
+            print("A base1: ")
+            printamatriz(base1)
+            print("A base2: ")
+            printamatriz(base2)
+            print()
+            print("A matriz de mudança de base: ")
+            print()
+            mudancadebase3x3(base1,base2)
+            print()
+            print('-'*50)
+        if dimensao == 4:
+            print('-'*50)
+            print("A base1: ")
+            printamatriz(base1)
+            print("A base2: ")
+            printamatriz(base2)
+            print()
+            print("A matriz de mudança de base: ")
+            print()
+            mudancadebase4x4(base1,base2)
+            print()
+            print('-'*50)
+    else:
+        print("Erro. Nenhuma das bases pode ter determinante igual a zero")
